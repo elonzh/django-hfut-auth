@@ -2,7 +2,7 @@
 
 
 __title__ = 'django-hfut-auth'
-__version__ = '0.1.0'
+__version__ = '0.1.1'
 __author__ = 'erliang'
 __author_email__ = 'dev@erliang.me'
 __url__ = 'https://github.com/er1iang/django-hfut-auth'
