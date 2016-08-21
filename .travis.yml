@@ -23,6 +23,8 @@ deploy:
       secure: "aPoEZ8ZwgVk9l6ak18p7ZkuNMhzyJn1138wWghtftVpFGmbTZ83rmigYEBXmfjQ+gwG/LuxGueBPnch+6Aa0ZbSIH1I197Y8syHBptbnWsn5HMhQ/Dk+bvN3Dqo9HBYL36LlHXLMMt7BPwCSdpGAJSONuFJjlFw+fuZei45nva4z7XU2jbRJBZ4Ush2cMbo/MZPIg58S41PzbqZXN8YXFat5L6gOdR7F0igj23Ushadd9KEqXxHEbBTLH+YjkpjhKIQKtWLcE726wVdNBE6ErtDTQQvx99wZugB74Q5ZbI2B8lZnamwwkgHVgZYKPFYYJawSllXL8dLnFOWosXKeAgaPn6SIlePtQBbsZFqEEx+B9hi48ZsJoltg7htLme1PQMJrD0TBqynb1buJGRd0lFyxPBbtPTtRKjymn/ohHjWY/ifKmgpr+//i/lByPx4dvqUFpW0N0aZO3cN4Qo1AGbfr1aHUU4Ywk3VrdfkWp1z6Mvwk63RKNW37z1radjE2JTobpG+izhwV/spzS6e13DCNqPdNpSRLxGuBy1LsBiIP26YyIRZt3vnw790jeRZsz4dHRyrGvEhq5UDPZTnzDorQBZYLgqbcvdhwbx2cgeFJRZOPY7xgTeFC9ldbHJfqpL5vUnHj0mrhiAgcZTVzGH9T/LZmCJp+zCec72gGRnY="
   on:
     tags: true
-    repo: er1iang/django-hfut-auth
+    repo: er1iang/django-hfut
     condition: "$TOXENV == py27"
 
+notifications:
+  slack: erliang:dI0z5IbJovSQp2dTfQp4zyne

@@ -2,35 +2,34 @@
 # -*- coding: utf-8 -*-
 from setuptools import setup
 
-import hfut_auth
+import django_hfut
 
-with open('README.rst') as readme_file:
-    readme = readme_file.read()
+with open('README.rst', 'rb') as readme_file:
+    readme = readme_file.read().decode('utf-8')
+with open('HISTORY.rst', 'rb') as history_file:
+    history = history_file.read().decode('utf-8')
+with open('requirements.txt', 'rb') as fp:
+    install_requires = fp.read().decode('utf-8').split()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read()
-
-with open('requirements.txt') as fp:
-    install_requires = fp.read().split()
 tests_require = install_requires
 
 setup(
-    name='django-hfut-auth',
-    version=hfut_auth.__version__,
+    name='django-hfut',
+    version=django_hfut.__version__,
     description="使用合工大教务接口进行用户身份认, 支持合肥校区和宣城校区",
     long_description=readme + '\n\n' + history,
     author="erliang",
     author_email='dev@erliang.me',
-    url='https://github.com/er1iang/django-hfut-auth',
+    url='https://github.com/er1iang/django-hfut',
     packages=[
-        'hfut_auth',
+        'django_hfut',
     ],
-    package_dir={'hfut_auth': 'hfut_auth'},
+    package_dir={'django_hfut': 'django_hfut'},
     include_package_data=True,
     install_requires=install_requires,
     license="MIT license",
     zip_safe=False,
-    keywords='hfut_auth',
+    keywords='django_hfut',
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
@@ -41,6 +40,6 @@ setup(
         'Programming Language :: Python :: 3.4',
         'Programming Language :: Python :: 3.5',
     ],
-    test_suite='hfut_auth.tests',
+    test_suite='django_hfut.tests',
     tests_require=tests_require
 )

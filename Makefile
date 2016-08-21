@@ -56,7 +56,7 @@ test-all: ## run tests on every Python version with tox
 
 coverage: ## check code coverage quickly with the default Python
 
-		coverage run --source hfut_auth setup.py test
+		coverage run --source django_hfut setup.py test
 
 		coverage report -m
 		coverage html

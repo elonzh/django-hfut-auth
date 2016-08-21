@@ -1,4 +1,4 @@
-* django-hfut-auth version:
+* django-hfut version:
 * Python version:
 * Operating System:
 

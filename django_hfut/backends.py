@@ -2,7 +2,7 @@
 from __future__ import absolute_import, division, print_function, unicode_literals
 
 from django.contrib.auth import get_user_model, _clean_credentials
-from hfut_stu_lib import StudentSession, ValidationError, SystemLoginFailed, IPBanned
+from hfut import StudentSession, ValidationError, SystemLoginFailed, IPBanned
 
 from . import settings
 from .signals import hfut_auth_succeeded, hfut_auth_failed

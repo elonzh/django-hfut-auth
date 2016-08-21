@@ -1,2 +1,2 @@
 django>=1.9
-hfut_stu_lib>=1.3.3
+hfut>=1.4.1

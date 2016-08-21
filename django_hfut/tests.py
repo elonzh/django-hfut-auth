@@ -4,7 +4,7 @@ from django.contrib.auth import authenticate
 from django.contrib.auth.models import User
 from django.test import TestCase, mock, override_settings
 
-from hfut_auth.forms import AuthenticationForm
+from django_hfut.forms import AuthenticationForm
 
 
 # https://docs.djangoproject.com/en/stable/topics/testing/overview/
@@ -19,10 +19,10 @@ class TestBackends(TestCase):
         user.save()
 
     # http://stackoverflow.com/questions/3817213/proper-way-to-test-django-signals
-    @mock.patch('hfut_auth.signals.hfut_auth_failed.send')
-    @mock.patch('hfut_auth.signals.hfut_auth_succeeded.send')
+    @mock.patch('django_hfut.signals.django_hfut_failed.send')
+    @mock.patch('django_hfut.signals.django_hfut_succeeded.send')
     # https://docs.djangoproject.com/en/stable/topics/testing/tools/#django.test.SimpleTestCase.modify_settings
-    @override_settings(HFUT_AUTH_CAMPUS='XC')
+    @override_settings(DJANGO_HFUT_CAMPUS='XC')
     def test_authenticate(self, mocked_succeeded_signal, mocked_failed_signal):
         user = authenticate(username=self.username, password=self.password)
         self.assertIsNotNone(user)
@@ -47,9 +47,15 @@ class TestBackends(TestCase):
 
 class TestForm(TestCase):
     def test_form(self):
-        with override_settings(HFUT_AUTH_CAMPUS='ALL'):
+        with override_settings(DJANGO_HFUT_CAMPUS='ALL'):
             form = AuthenticationForm()
             self.assertIn('campus', form.fields)
-        with override_settings(HFUT_AUTH_CAMPUS='XC'):
+        with override_settings(DJANGO_HFUT_CAMPUS='XC'):
             form = AuthenticationForm()
             self.assertNotIn('campus', form.fields)
+
+
+class TestSync(TestCase):
+    def test_sync(self):
+        # todo
+        pass

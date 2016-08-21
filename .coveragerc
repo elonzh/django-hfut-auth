@@ -1,4 +1,4 @@
 [run]
-source = hfut_auth
+source = django_hfut
 [html]
 directory = coverage_html_report
