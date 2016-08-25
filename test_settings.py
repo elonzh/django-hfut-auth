@@ -5,27 +5,24 @@ SECRET_KEY = 'psst'
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',
-    'django_hfut'
+    'hfut_auth'
 )
 
-# https://docs.djangoproject.com/en/dev/ref/databases/#database-is-locked-errors
-# https://docs.djangoproject.com/en/dev/ref/settings/#engine
-# http://stackoverflow.com/questions/37216731/postgresql-in-memory-database-django
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'django_hfut',
-        'USER': 'postgres',
-        'PASSWORD': 'sql&admin',
-        'HOST': 'localhost',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': ':memory:',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
     }
 }
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
-    'django_hfut.backends.HFUTBackend'
+    'hfut_auth.backends.HFUTBackend'
 )
 
 # default
-DJANGO_HFUT_CAMPUS = 'ALL'
+HFUT_AUTH_CAMPUS = 'ALL'

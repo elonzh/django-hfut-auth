@@ -1,5 +1,5 @@
 # -*- coding:utf-8 -*-
-from __future__ import absolute_import, division, print_function, unicode_literals
+from __future__ import unicode_literals
 
 from django.contrib.auth import get_user_model, _clean_credentials
 from hfut import StudentSession, ValidationError, SystemLoginFailed, IPBanned
@@ -10,7 +10,7 @@ from .signals import hfut_auth_succeeded, hfut_auth_failed
 __all__ = ['HFUTBackend']
 
 
-# https://docs.djangoproject.com/en/1.9/topics/auth/customizing/#authentication-backends
+# https://docs.djangoproject.com/en/stable/topics/auth/customizing/#authentication-backends
 # django.contrib.auth.backends.ModelBackend
 class HFUTBackend(object):
     def authenticate(self, password, **kwargs):
